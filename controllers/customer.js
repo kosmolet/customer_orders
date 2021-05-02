@@ -1,4 +1,4 @@
-const Customer = require('../models/Customer');
+const Customer = require("../models/Customer");
 
 exports.getCustomer = async (req, res) => {
   try {
@@ -10,7 +10,7 @@ exports.getCustomer = async (req, res) => {
       });
     } else {
       return res.status(400).json({
-        error: 'Customer does not exist',
+        error: "Customer does not exist",
       });
     }
   } catch (err) {
@@ -22,34 +22,56 @@ exports.getCustomer = async (req, res) => {
 };
 
 exports.getCustomers = async (req, res) => {
-    try {
-      const customers = await Customer.find();
-      if (customers) {
-        res.status(200).json({
-          success: true,
-          customers,
-        });
-      } else {
-        return res.status(400).json({
-          error: 'Customers do not exist',
-        });
-      }
-    } catch (err) {
-      res.status(500).json({
-        success: false,
-        error: err.message,
+  try {
+    const customers = await Customer.find();
+    if (customers) {
+      res.status(200).json({
+        success: true,
+        customers,
+      });
+    } else {
+      return res.status(400).json({
+        error: "Customers do not exist",
       });
     }
-  };
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+};
 
+exports.postCustomer = async (req, res) => {
+  try {
+    const customer = new Customer(req.body);
+    await customer.save();
+    return res.status(201).send(customer);
+  } catch (err) {
+    return res.status(500).json({ success: false, message: err.message });
+  }
+};
 
- exports.postCustomer = ( async (req, res) => {
-   
-    try {
-      const customer = new Customer(req.body);
-      await customer.save();
-      return res.status(201).send(customer);
-    } catch (err) {
-      return res.status(500).json({ success: false, message: err.message });
+exports.getOrders = async (req, res) => {
+  try {
+    console.log(req.params);
+    const orders = await Customer.find({
+      _id: req.params.customerId,
+    }).populate("orders");
+    if (orders) {
+      res.status(200).json({
+        success: true,
+        orders,
+      });
+    } else {
+      return res.status(400).json({
+        error: "Orders do not exist",
+      });
     }
-  });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      error: err.message,
+    });
+  }
+};

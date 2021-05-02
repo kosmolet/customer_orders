@@ -1,0 +1,145 @@
+@BASE_URL=http://localhost:{{$dotenv PORT}}/api/v1/customer
+@CUSTOMER_ID=608f1dbd927fab48c09a0cf5
+@CUSTOMER_ID2=608f1dc1927fab48c09a0cf6
+@ORDER_ID=608f1dee927fab48c09a0cf7
+### GET customers:
+GET {{BASE_URL}}/
+
+
+### GET customer:
+GET {{BASE_URL}}/{{CUSTOMER_ID}}
+
+
+### GET customer's orders:
+GET {{BASE_URL}}/{{CUSTOMER_ID}}/orders/
+
+### GET customer's orders:
+GET {{BASE_URL}}/{{CUSTOMER_ID2}}/orders/
+
+### GET customer's orders:
+GET {{BASE_URL}}/{{CUSTOMER_ID}}/orders/{{ORDER_ID}}
+
+
+### POST customer
+POST {{BASE_URL}}/  
+content-type: application/json
+
+{
+    "firstName": "Lana",
+    "lastName": "Eriksson",
+    "ssn": "19900203-1234",
+    "email": "lana@gmail.com",
+    "phone": "+460721234567" 
+    
+}
+
+### POST customer 2
+POST {{BASE_URL}}/  
+content-type: application/json
+
+{
+    "firstName": "Peter",
+    "lastName": "Svensson",
+    "ssn": "16720609-1234",
+    "email": "petr@gmail.com",
+    "phone": "+460721444567" 
+    
+}
+
+
+### POST order 1
+POST {{BASE_URL}}/{{CUSTOMER_ID}}/orders 
+content-type: application/json
+
+{
+    "orderType": "Instore",
+    "countryCode": "UK",
+    "store": "Butik1",
+    "paymentMethod": "VISA",
+    "paymentStatus": "Paid",
+    "amount": 1234,
+    "flagged": false,
+    "customer": "608f1dbd927fab48c09a0cf5"
+    
+}
+
+### POST order 2
+POST {{BASE_URL}}/{{CUSTOMER_ID}}/orders 
+content-type: application/json
+
+{
+    "orderType": "Manual",
+    "countryCode": "UK",
+    "store": "Butik2",
+    "paymentMethod": "PayPal",
+    "paymentStatus": "In Progress",
+    "amount": 765,
+    "flagged": false,
+    "customer": "608f1dbd927fab48c09a0cf5"
+    
+}
+
+### POST order 3
+POST {{BASE_URL}}/{{CUSTOMER_ID}}/orders 
+content-type: application/json
+
+{
+    "orderType": "Online",
+    "countryCode": "SE",
+    "store": "Butik3",
+    "paymentMethod": "QLIRO",
+    "paymentStatus": "Paid",
+    "amount": 5000,
+    "flagged": false,
+    "customer": "608f1dbd927fab48c09a0cf5"
+    
+}
+
+### POST order 4
+POST {{BASE_URL}}/{{CUSTOMER_ID}}/orders 
+content-type: application/json
+
+{
+    "orderType": "Online",
+    "countryCode": "SE",
+    "store": "Butik4",
+    "paymentMethod": "Trustly",
+    "paymentStatus": "Failed",
+    "amount": 520,
+    "flagged": false,
+    "customer": "608f1dbd927fab48c09a0cf5"
+    
+}
+
+### POST order 5
+POST {{BASE_URL}}/{{CUSTOMER_ID}}/orders 
+content-type: application/json
+
+{
+    "orderType": "Online",
+    "countryCode": "SE",
+    "store": "Butik5",
+    "paymentMethod": "AMEX",
+    "paymentStatus": "Paid",
+    "amount": 52,
+    "flagged": false,
+    "customer": "608f1dbd927fab48c09a0cf5"
+    
+}
+
+
+### POST order 1 for second customer
+POST {{BASE_URL}}/{{CUSTOMER_ID2}}/orders 
+content-type: application/json
+
+{
+    "orderType": "Online",
+    "countryCode": "SE",
+    "store": "Butik12",
+    "paymentMethod": "PayPal",
+    "paymentStatus": "Paid",
+    "amount": 522,
+    "flagged": false,
+    "customer": "608f1dc1927fab48c09a0cf6"
+    
+}
