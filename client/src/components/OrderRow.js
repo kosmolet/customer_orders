@@ -70,7 +70,7 @@ const OrderRow = ({ order }) => {
     <tr className="orderRow">
       <td className="orderType">
         <p style={orderTypeColor(order.orderType)}>{order.orderType}</p>
-        {console.log(order.flagged)}
+
         {order.flagged && <img className="flag" src={Upsell} alt="flag"></img>}
       </td>
 
@@ -85,7 +85,6 @@ const OrderRow = ({ order }) => {
       </td>
       <td>
         <span className="butik">
-          {console.log(order)}
           {order.countryCode === "SE" ? (
             <SE className="countryImg" />
           ) : (
@@ -107,13 +106,12 @@ const OrderRow = ({ order }) => {
       </td>
       <td>
         <span className="statusPay">
-        <span
-          className="dotIcon"
-          style={{ backgroundColor: paymentStatusColor(order.paymentStatus) }}
-        >
-            
+          <span
+            className="dotIcon"
+            style={{ backgroundColor: paymentStatusColor(order.paymentStatus) }}
+          ></span>
+          <span className="status">{order.paymentStatus}</span>
         </span>
-        <span className="status">{order.paymentStatus}</span></span>
       </td>
       <td>
         <p className="amount">{order.amount}</p>

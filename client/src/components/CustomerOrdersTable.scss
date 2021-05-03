@@ -69,3 +69,35 @@
         }
     }
 }
+.pagination {
+    margin-top: 30px;
+    padding: 15px;
+    padding-right: 100px;
+    display: flex;
+    list-style: none;
+    float: right;
+    outline: none;
+
+    li {
+        padding: 15px 10px;
+
+        &.next,
+        &.previous {
+            color: $forrest-green;
+        }
+
+        &.active {
+            background-color: $forrest-green;
+            color: $white;
+            border-radius: 50%;
+        }
+
+        &.disabled {
+            color: $medium-grey;
+        }
+        a {
+            outline: none;
+            padding: 10px;
+        }
+    }
+}
