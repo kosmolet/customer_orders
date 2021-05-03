@@ -6,6 +6,10 @@ const schema = new Schema({
   ssn: { type: String, require: true },
   email: { type: String, require: true, unique: true },
   phone: { type: String, require: true },
+  address: { type: String, require: true },
+  city: { type: String, require: true },
+  country: { type: String, require: true },
+  postcode: { type: String, require: true },
   orders: [{ type: Types.ObjectId, ref: "Order" }],
 });
 

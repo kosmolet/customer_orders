@@ -1,0 +1,71 @@
+@import "../assets/styles/variables";
+
+.ordersTable {
+    width: 100vw;
+    .ordersHeader {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        width: 86%;
+        margin-left: 100px;
+        color: $almost-black;
+        font-size: 13px;
+        .help {
+            color: $forrest-green;
+            .infoHelp {
+                margin-right: 3px;
+                padding: 1px 6px;
+                background-color: $light-grey;
+                border-radius: 50%;
+                display: inline-block;
+            }
+        }
+    }
+    table {
+        border-spacing: 0 8px;
+        position: relative;
+        color: $dark-grey;
+        font-weight: 500;
+        width: 86%;
+        margin-left: 100px;
+        text-align: start;
+    }
+    thead {
+        tr {
+            width: 100%;
+        }
+        th {
+            text-align: start;
+            padding: 10px 0;
+            background: transparent;
+            border-bottom: none;
+            color: $medium-grey;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    tbody {
+        tr {
+            position: relative;
+            background: transparent;
+            box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            backface-visibility: hidden;
+            border-radius: 18px;
+            overflow: hidden;
+            height: 80px;
+
+            td {
+                background: $white;
+            }
+
+            &:hover,
+            &:focus {
+                z-index: 1;
+                box-shadow: 1px 2px 20px -5px $dark-grey;
+            }
+        }
+    }
+}

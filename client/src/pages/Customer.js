@@ -1,9 +1,16 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useEffect, useContext } from "react";
+import AppContext from "../store/context";
 import fetchBaseURL from "../axios";
+import CustomerHeader from "../components/CustomerHeader";
+import CustomerContacts from "../components/CustomerContacts";
+import CustomerOrdersTable from "../components/CustomerOrdersTable";
 
 const Customer = ({ match }) => {
-  const [customerOrders, setOrders] = useState([]);
+  const {
+    setChosenCustomer,
+    setCustomerOrders,
+  } = useContext(AppContext);
+
   useEffect(() => {
     const fetchOrders = async () => {
       const data = await fetchBaseURL.get(
@@ -11,15 +18,17 @@ const Customer = ({ match }) => {
       );
 
       const customerWithOrders = await data.data.orders[0];
-      setOrders(customerWithOrders);
+      setChosenCustomer(customerWithOrders);
+      setCustomerOrders(customerWithOrders.orders);
     };
     fetchOrders();
   }, [match]);
 
   return (
-    <div>
-      {console.log(customerOrders, "Customer details")}
-      {console.log(customerOrders.orders, "Customer's orders")}
+    <div className="customerPage">
+      <CustomerHeader />
+      <CustomerContacts />
+      <CustomerOrdersTable />
     </div>
   );
 };

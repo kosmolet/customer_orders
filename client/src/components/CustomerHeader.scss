@@ -1,0 +1,15 @@
+@import "../assets/styles/variables";
+
+.customerHeader{
+    background-color: $white;
+    font-family: $font-main;
+    color: $almost-black;
+    box-sizing: border-box;
+    padding: 1.5vmax;
+    padding-left:100px;
+    width: 100vw;
+    text-align: start;
+    font-weight: 600;
+    font-size: 18px;
+
+}

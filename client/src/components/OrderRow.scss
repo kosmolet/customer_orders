@@ -1,0 +1,70 @@
+@import "../assets/styles/variables";
+.orderRow {
+    max-width: 100%;
+    .orderType {
+        padding-right: 40px;
+        position: relative;
+        width: 50px;
+        p {
+            margin-left: -20px;
+            transform: rotate(-90deg);
+            text-align: center;
+            padding: 8px 18px;
+            border-radius: 5px;
+            position: relative;
+            font-size: 12px;
+        }
+        .flag {
+            background-color: $white;
+            position: absolute;
+            top: 35%;
+            left: 30%;
+            z-index: 1;
+            padding: 6px;
+            border-radius: 25px;
+
+            box-shadow: 1px 2px 5px -2px $almost-black;
+        }
+    }
+    .idRow {
+        display: flex;
+        align-items: center;
+        color: $forrest-green;
+    }
+    .arrowIcon {
+        margin-left: 2px;
+    }
+    .butik {
+        display: flex;
+        align-items: center;
+        .countryImg {
+            margin-right: 2px;
+        }
+    }
+
+    .payment {
+        display: flex;
+        align-items: center;
+        .paymentImg {
+            margin-right: 2px;
+            border: 1px solid $light-grey;
+            border-radius: 6px;
+            width: 38px;
+            padding: 6px 2px;
+        }
+    }
+    .statusPay {
+        display: flex;
+        align-items: center;
+        .dotIcon {
+            height: 8px;
+            width: 8px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+        .status {
+            text-align: center;
+        }
+    }
+}

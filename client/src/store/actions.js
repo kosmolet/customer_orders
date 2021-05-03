@@ -1,0 +1,5 @@
+export const SET_CUSTOMERS = "SET_CUSTOMERS";
+export const SET_CHOSEN_CUSTOMER = "SET_CHOSEN_CUSTOMER";
+export const SET_ORDERS = "SET_ORDERS";
+export const SET_CHOSEN_ORDER = "SET_CHOSEN_ORDER";
+ 

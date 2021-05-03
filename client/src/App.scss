@@ -1,15 +1,12 @@
 @import "./assets/styles/variables";
 
-
-*{
+* {
   margin: 0;
+  max-width: 100%;
 }
 
 .App {
   text-align: center;
   font-family: $font-main;
- 
+  background-color: $white-smoke;
 }
-
-
-  

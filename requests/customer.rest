@@ -1,6 +1,6 @@
 @BASE_URL=http://localhost:{{$dotenv PORT}}/api/v1/customer
-@CUSTOMER_ID=608f1dbd927fab48c09a0cf5
-@CUSTOMER_ID2=608f1dc1927fab48c09a0cf6
+@CUSTOMER_ID=608fd2d39bf81b67a8be0485
+@CUSTOMER_ID2=608fd2d49bf81b67a8be0486
 @ORDER_ID=608f1dee927fab48c09a0cf7
 ### GET customers:
 GET {{BASE_URL}}/
@@ -29,7 +29,11 @@ content-type: application/json
     "lastName": "Eriksson",
     "ssn": "19900203-1234",
     "email": "lana@gmail.com",
-    "phone": "+460721234567" 
+    "phone": "+460721234567",
+    "address": "Solvagen 12-1002", 
+    "city": "Stockholm", 
+    "country": "Sweden", 
+    "postcode": "19234"
     
 }
 
@@ -42,7 +46,11 @@ content-type: application/json
     "lastName": "Svensson",
     "ssn": "16720609-1234",
     "email": "petr@gmail.com",
-    "phone": "+460721444567" 
+    "phone": "+460721444567",
+    "address": "Tradvagen 12-1002", 
+    "city": "Stockholm", 
+    "country": "Sweden", 
+    "postcode": "19554" 
     
 }
 
@@ -59,7 +67,7 @@ content-type: application/json
     "paymentStatus": "Paid",
     "amount": 1234,
     "flagged": false,
-    "customer": "608f1dbd927fab48c09a0cf5"
+    "customer": "608fd2d39bf81b67a8be0485"
     
 }
 
@@ -75,7 +83,7 @@ content-type: application/json
     "paymentStatus": "In Progress",
     "amount": 765,
     "flagged": false,
-    "customer": "608f1dbd927fab48c09a0cf5"
+    "customer": "608fd2d39bf81b67a8be0485"
     
 }
 
@@ -91,7 +99,7 @@ content-type: application/json
     "paymentStatus": "Paid",
     "amount": 5000,
     "flagged": false,
-    "customer": "608f1dbd927fab48c09a0cf5"
+    "customer": "608fd2d39bf81b67a8be0485"
     
 }
 
@@ -107,7 +115,7 @@ content-type: application/json
     "paymentStatus": "Failed",
     "amount": 520,
     "flagged": false,
-    "customer": "608f1dbd927fab48c09a0cf5"
+    "customer": "608fd2d39bf81b67a8be0485"
     
 }
 
@@ -123,7 +131,7 @@ content-type: application/json
     "paymentStatus": "Paid",
     "amount": 52,
     "flagged": false,
-    "customer": "608f1dbd927fab48c09a0cf5"
+    "customer": "608fd2d39bf81b67a8be0485"
     
 }
 
@@ -140,6 +148,6 @@ content-type: application/json
     "paymentStatus": "Paid",
     "amount": 522,
     "flagged": false,
-    "customer": "608f1dc1927fab48c09a0cf6"
+    "customer": "608fd2d49bf81b67a8be0486"
     
 }
