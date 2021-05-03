@@ -1,7 +1,7 @@
 # customer_orders
 
 Create `.env` in root directory and add `PORT, MONGO_URI` vars    
-#### To start server `run npm run server` in root directory  
+#### To start server run `npm run server` in root directory  
 
 
 Create `.env.development.local` in client root directory and add `REACT_APP_BASE_URL=http://localhost:{{PORT}}/api/v1/ ` 
